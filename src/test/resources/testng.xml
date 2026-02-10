@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="FakeRestAPI Bookstore Test Suite" parallel="false" thread-count="1">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Books API - Happy Path Tests" preserve-order="true">
+        <classes>
+            <class name="tests.books.BooksHappyPathTest">
+                <methods>
+                    <include name="testGetAllBooks"/>
+                    <include name="testGetBookById"/>
+                    <include name="testCreateNewBook"/>
+                    <include name="testUpdateBook"/>
+                    <include name="testDeleteBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Books API - Edge Case Tests" preserve-order="true">
+        <classes>
+            <class name="tests.books.BooksEdgeCaseTest">
+                <methods>
+                    <include name="testGetBookWithNonExistentId"/>
+                    <include name="testGetBookWithInvalidIdFormat"/>
+                    <include name="testCreateBookWithNullTitle"/>
+                    <include name="testCreateBookWithNegativePageCount"/>
+                    <include name="testCreateBookWithZeroPageCount"/>
+                    <include name="testUpdateBookWithInvalidId"/>
+                    <include name="testDeleteBookWithInvalidId"/>
+                    <include name="testCreateBookWithLongTitle"/>
+                    <include name="testResponseTime"/>
+                    <include name="testCreateBookWithEmptyDescription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Authors API - Happy Path Tests (Bonus)" preserve-order="true">
+        <classes>
+            <class name="tests.authors.AuthorsHappyPathTest">
+                <methods>
+                    <include name="testGetAllAuthors"/>
+                    <include name="testGetAuthorById"/>
+                    <include name="testCreateNewAuthor"/>
+                    <include name="testUpdateAuthor"/>
+                    <include name="testDeleteAuthor"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
