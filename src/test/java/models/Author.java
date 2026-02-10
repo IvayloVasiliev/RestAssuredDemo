@@ -18,26 +18,15 @@ public class Author {
     private String firstName;
     private String lastName;
 
-    /**
-     * Validate if Author object has required fields
-     * @return true if all required fields are present
-     */
+
     public boolean isValid() {
         return id > 0 && firstName != null && !firstName.isEmpty() && lastName != null && !lastName.isEmpty();
     }
 
-    /**
-     * Validate if Author has minimal required fields for creation
-     * @return true if minimal fields are present
-     */
     public boolean hasMinimalFields() {
         return firstName != null && !firstName.isEmpty() && lastName != null && !lastName.isEmpty();
     }
 
-    /**
-     * Get full name of the author
-     * @return Full name (FirstName LastName)
-     */
     public String getFullName() {
         return firstName + " " + lastName;
     }

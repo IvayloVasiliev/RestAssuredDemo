@@ -20,18 +20,10 @@ public class Book {
     private String excerpt;
     private String publishDate;
 
-    /**
-     * Validate if Book object has required fields
-     * @return true if all required fields are present
-     */
     public boolean isValid() {
         return id > 0 && title != null && !title.isEmpty();
     }
 
-    /**
-     * Validate if Book has minimal required fields for creation
-     * @return true if minimal fields are present
-     */
     public boolean hasMinimalFields() {
         return title != null && !title.isEmpty() && pageCount > 0;
     }
